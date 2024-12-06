@@ -39,10 +39,10 @@ UICorner_2.Parent = TextButton
 
 -- Scripts:
 
-local function JVDFTJ_fake_script() -- TextButton.LocalScript 
+local function WZZU_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
-	local button = script.Parent
+	local buttonss = script.Parent
 	local stuff = false
 	function wires()
 		local wire = game.Workspace.PlayerModels.Wire
@@ -71,7 +71,7 @@ local function JVDFTJ_fake_script() -- TextButton.LocalScript
 		wire.Name = "Done"
 	end
 	
-	button.MouseButton1Click:Connect(function()
+	buttonss.MouseButton1Click:Connect(function()
 		if stuff == false then
 			stuff = true
 			print("Started")
@@ -86,4 +86,4 @@ local function JVDFTJ_fake_script() -- TextButton.LocalScript
 		end
 	end)
 end
-coroutine.wrap(JVDFTJ_fake_script)()
+coroutine.wrap(WZZU_fake_script)()
