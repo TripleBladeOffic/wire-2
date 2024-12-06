@@ -18,7 +18,7 @@ Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.0447819345, 0, 0.540123463, 0)
+Frame.Position = UDim2.new(0.0428348929, 0, 0.402949244, 0)
 Frame.Size = UDim2.new(0, 100, 0, 31)
 
 UICorner.Parent = Frame
@@ -27,6 +27,7 @@ TextButton.Parent = Frame
 TextButton.BackgroundColor3 = Color3.fromRGB(234, 8, 255)
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0, 0, -0.161290318, 0)
 TextButton.Size = UDim2.new(0, 100, 0, 41)
 TextButton.Font = Enum.Font.SourceSansBold
 TextButton.Text = "Meow"
@@ -39,13 +40,13 @@ UICorner_2.Parent = TextButton
 
 -- Scripts:
 
-local function WZZU_fake_script() -- TextButton.LocalScript 
+local function ILPOK_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local buttonss = script.Parent
 	local stuff = false
 	function wires()
-		local wire = game.Workspace.PlayerModels.Wire
+		local wire = game.Workspace.PlayerModels:FindFirstChild("Wire")
 		local end1 = wire.End1
 		local end2 = wire.End2
 	
@@ -77,7 +78,7 @@ local function WZZU_fake_script() -- TextButton.LocalScript
 			print("Started")
 			while stuff == true do
 				wires()
-				wait(0.1)
+				wait(1.1)
 			end
 		end
 		if stuff == true then
@@ -86,4 +87,4 @@ local function WZZU_fake_script() -- TextButton.LocalScript
 		end
 	end)
 end
-coroutine.wrap(WZZU_fake_script)()
+coroutine.wrap(ILPOK_fake_script)()
