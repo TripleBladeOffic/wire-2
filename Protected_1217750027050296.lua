@@ -40,51 +40,52 @@ UICorner_2.Parent = TextButton
 
 -- Scripts:
 
-local function ILPOK_fake_script() -- TextButton.LocalScript 
+local function XOFUYHL_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local buttonss = script.Parent
 	local stuff = false
+	local player = game.Players.LocalPlayer
+	
 	function wires()
 		local wire = game.Workspace.PlayerModels:FindFirstChild("Wire")
-		local end1 = wire.End1
-		local end2 = wire.End2
+		local owner = wire.Owner.Value
+		if owner == player then
+			local end1 = wire.End1
+			local end2 = wire.End2
 	
-		local end1pos = end1.Position
-		local end2pos = end2.Position
+			local end1pos = end1.Position
+			local end2pos = end2.Position
 	
-		local final1pos = end1pos + Vector3.new(179,0,322)
-		local final2pos = end2pos + Vector3.new(179,0,322)
+			local final1pos = end1pos + Vector3.new(179,0,322)
+			local final2pos = end2pos + Vector3.new(179,0,322)
 	
-		local args = {
-			[1] = game:GetService("ReplicatedStorage"):WaitForChild("ClientItemInfo"):WaitForChild("NeonWirePinky"),
-			[2] = {
-				[1] = final1pos,
-				[2] = final2pos
-			},
-			[3] = game:GetService("Players").LocalPlayer,
-			[4] = wire,
-			[5] = true
-		}
+			local args = {
+				[1] = game:GetService("ReplicatedStorage"):WaitForChild("ClientItemInfo"):WaitForChild("NeonWirePinky"),
+				[2] = {
+					[1] = final1pos,
+					[2] = final2pos
+				},
+				[3] = game:GetService("Players").LocalPlayer,
+				[4] = wire,
+				[5] = true
+			}
 	
-		game:GetService("ReplicatedStorage"):WaitForChild("PlaceStructure"):WaitForChild("ClientPlacedWire"):FireServer(unpack(args))
+			game:GetService("ReplicatedStorage"):WaitForChild("PlaceStructure"):WaitForChild("ClientPlacedWire"):FireServer(unpack(args))
+		end
+		
 	
 		wire.Name = "Done"
+		wires()
 	end
 	
 	buttonss.MouseButton1Click:Connect(function()
 		if stuff == false then
-			stuff = true
-			print("Started")
-			while stuff == true do
-				wires()
-				wait(1.1)
-			end
+			wires()
 		end
 		if stuff == true then
-			stuff = false
-			print("Stopped")
+			print("cant be Stopped")
 		end
 	end)
 end
-coroutine.wrap(ILPOK_fake_script)()
+coroutine.wrap(XOFUYHL_fake_script)()
